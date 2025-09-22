@@ -42,15 +42,6 @@ export const makeMove = (gameState: GameState, row: number, col: number) => {
         newWinner = newBoard[0][2]
     }
 
-    // if row 0 3 x or o
-    // if row 1 3 x or o
-    // if row 2 3 x or o
-    // if col 0 3 x or o
-    // if col 1 3 x or o
-    // if col 2 3 x or o
-    // if [0][0] [1][1] [2][2]
-    // if [2][2] [1[1] [2][0]
-
     const newGameState = {
         currentPlayer: newPlayer,
         winner: newWinner,

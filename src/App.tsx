@@ -16,6 +16,10 @@ const App = () => {
     setGameState(prevGameState => makeMove(prevGameState, row, col))
   }
 
+  const restartGame = () => {
+    setGameState(initialBoard)
+  }
+
   return (
     <>
       <h1 className="text-3xl font-bold underline">TicTac</h1>
@@ -31,7 +35,9 @@ const App = () => {
         <div onClick={() => handleClick(2, 1)} className="square" id="one">{gameState.board[2][1]}</div>
         <div onClick={() => handleClick(2, 2)} className="square" id="one">{gameState.board[2][2]}</div>
       </div>
+      <div>Turn: {gameState.currentPlayer}</div>
       {gameState.winner !== undefined && <div>Winner:{gameState.winner}</div>}
+      <button onClick={() => restartGame()}>Restart Game</button>
     </>
   )
 }
